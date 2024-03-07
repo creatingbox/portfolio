@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 
-function App() {
+function Home() {
   return (
     
       <div className="App">
@@ -21,7 +21,6 @@ function App() {
           >
             시작하기
           </a>
-          
         </header>
       </div>
 
@@ -29,4 +28,4 @@ function App() {
   );
 }
 
-export default App;
+export default Home;
