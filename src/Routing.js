@@ -3,22 +3,22 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import App from './App';
-import Home from './Pages/Home';
-import Features from './Pages/Features';
-import Pricing from './Pages/Pricing';
+import Home from './Pages/home_1';
+import Features from './Pages/features';
+import Pricing from './Pages/pricing';
 
 
 function Routing() {
   return (
     
-      <div className="App">
+      <div className="Routing">
         
         <BrowserRouter>
             <Routes>
-            <Route path='/' element={<App/>} />
-            <Route path='/home' element={<Home/>} />
-            <Route path='/Features' element={<Features/>} />
-            <Route path='/Pricing' element={<Pricing/>} />
+              <Route path="/" element={<App/>} />
+              <Route path='/home' element={<Home/>} />
+              <Route path='/features' element={<Features/>} />
+              <Route path='/pricing' element={<Pricing/>} />
             </Routes>
         </BrowserRouter>
       </div>
