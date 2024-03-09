@@ -4,9 +4,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import App from './App';
 import Home from './Pages/home_1';
-import Features from './Pages/features';
-import Pricing from './Pages/pricing';
-
+import Personal_Statement from './Pages/Personal_Statement';
+import Send_Email from './email/email';
+import Project from './Pages/Project';
 
 function Routing() {
   return (
@@ -17,8 +17,9 @@ function Routing() {
             <Routes>
               <Route path="/" element={<App/>} />
               <Route path='/home' element={<Home/>} />
-              <Route path='/features' element={<Features/>} />
-              <Route path='/pricing' element={<Pricing/>} />
+              <Route path='/Personal_Statement' element={<Personal_Statement/>} />
+              <Route path='/Project' element={<Project/>} />
+              <Route path='/send_email' element={<Send_Email/>} />
             </Routes>
         </BrowserRouter>
       </div>

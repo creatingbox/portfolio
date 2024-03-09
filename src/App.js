@@ -20,6 +20,7 @@ function App() {
         >
           시작하기
         </a>
+        <link rel="shortcut icon" href='./favicon.ico'/>
       </header>
     </div>
 
