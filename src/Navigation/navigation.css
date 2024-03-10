@@ -30,6 +30,8 @@
     padding: 8px 16px;
     background-color: var(--background-color);
     height: 120px;
+    width: 100%;
+    margin-bottom: 0;
   }
   
   /* Logo with text */

@@ -18,8 +18,8 @@ function Navigation(){
                 <li><a href='/home'>Home</a></li>
                 <li><a href='/Personal_Statement'>Personal_Statement</a></li>
                 <li><a href='/Project'>Project</a></li>
-                <li><a href=''>Interesting</a></li>
-                <li><a href=''>Contact</a></li>
+                <li><a href='/Interesting'>Interesting</a></li>
+                <li><a href='/board'>Board</a></li>
             </ul>
 
             <ul className='navbar__icons'>
@@ -28,13 +28,11 @@ function Navigation(){
                         <FontAwesomeIcon icon={faEnvelope} />
                     </Link>
                 </li>
-                    
                 <li>
                     <a href='https://github.com/creatingbox'>
                         <FontAwesomeIcon icon={faGithub} />
                     </a>
                 </li>
-
             </ul>
             <a href="#" className="navbar__toggleBtn">
                 <FontAwesomeIcon icon={faBars} />

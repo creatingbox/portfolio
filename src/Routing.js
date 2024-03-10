@@ -7,6 +7,8 @@ import Home from './Pages/home_1';
 import Personal_Statement from './Pages/Personal_Statement';
 import Send_Email from './email/email';
 import Project from './Pages/Project';
+import Board from './Pages/Board';
+import Interesting from './Pages/Interesting';
 
 function Routing() {
   return (
@@ -19,7 +21,10 @@ function Routing() {
               <Route path='/home' element={<Home/>} />
               <Route path='/Personal_Statement' element={<Personal_Statement/>} />
               <Route path='/Project' element={<Project/>} />
+              <Route path='/Interesting' element={<Interesting/>} />
+              <Route path='/board' element={<Board/>} />
               <Route path='/send_email' element={<Send_Email/>} />
+
             </Routes>
         </BrowserRouter>
       </div>

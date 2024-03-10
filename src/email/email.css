@@ -1,7 +1,7 @@
 .email {
-    max-width: 1600px;
+    width: 100%;
     margin: 0 auto;
-    padding: 20px;
+    padding: 0px;
   }
   
   .page_title {
