@@ -8,7 +8,7 @@ function App() {
 
     <div className="App">
       <header className="App-header">
-        <img src='./creatingbox.png' className="App-logo" alt="logo" />
+        <img src='/creatingbox.png' className="App-logo" alt="logo" />
         <p>
           KKH's blog
         </p>
