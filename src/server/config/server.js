@@ -13,10 +13,11 @@ app.get('/', (req, res) => {
   res.send('Root'); // 클라이언트에 응답을 보내는 부분을 추가
 });
 
-app.get('/customers', (req, res) => {
-  console.log('/customers');
+app.get('/activities', (req, res) => {
+  console.log('/activities');
+
   // MySQL 쿼리 실행
-  db.query('SELECT * FROM customers', (err, result) => {
+  db.query('SELECT `WBS Code`, `(*)WBS Name`, `Activity ID`, `Activity Name`, `Start Date`, `Finish Date` FROM activities', (err, result) => {
     if (err) {
       console.error('MySQL query error:', err);
       res.status(500).send('Internal Server Error'); // 에러 응답을 클라이언트에 전송

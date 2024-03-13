@@ -6,7 +6,7 @@ import App from './App';
 import Home from './Pages/home_1';
 import Personal_Statement from './Pages/Personal_Statement';
 import Send_Email from './email/email';
-import Project from './Pages/Project';
+import Project from './Pages/Project/Project';
 import Board from './Pages/Board';
 import Interesting from './Pages/Interesting';
 

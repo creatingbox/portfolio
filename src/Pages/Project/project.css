@@ -1,0 +1,101 @@
+/*전체 프로젝트 관련*/
+.Project{
+    padding: 0;
+    margin: 0;
+}
+
+/*테이블 관련*/
+.tables-container {
+    display: flex;
+    flex-direction: row;
+}
+
+/*좌측 테이블 관련*/
+.project-table-container{
+    width: 450px;
+    height: 800px;
+    margin-left: 20px;
+    overflow-x: auto;
+    overflow-y: auto;
+}
+
+.project-table{
+    width: 100%;
+    border-collapse: collapse;
+    /* margin-left: 200px; */
+}
+
+.project-table th{
+    border: 3px solid black;
+    padding: 8px;
+    max-width: 80px;
+    height: 70px;
+    text-align: left;
+    white-space: nowrap;            /*텍스트가 줄바꿈 되지 않도록 설정*/    
+    overflow: hidden;               /*콘텐츠가 셀에서 넘치면 숨기기 */
+    text-overflow: ellipsis;        /*셀 내용이 너무 길 경우 말줄임(...)으로 표시*/
+}
+
+.project-table td{
+    border: 3px solid black;
+    padding: 8px;
+    max-width: 80px;
+    height: 40px;
+    text-align: left;
+    white-space: nowrap;            /*텍스트가 줄바꿈 되지 않도록 설정*/    
+    overflow: hidden;               /*콘텐츠가 셀에서 넘치면 숨기기 */
+    text-overflow: ellipsis;        /*셀 내용이 너무 길 경우 말줄임(...)으로 표시*/
+}
+
+.project-table th:hover, .project-table td:hover{
+    background-color: yellowgreen;
+}
+
+.project-table tbody{
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+/*테이블 말줄임 클릭 관련 */
+.ellipsis-active {
+    white-space: normal !important;   /* 클릭 시 줄 바꿈이 되도록 설정 */
+    overflow: visible !important;      /* 내용이 모두 표시되도록 설정 */
+    text-overflow: unset !important;    /* 말줄임 표시를 비활성화 */
+    word-break: break-all;
+}
+
+
+/* 우측 테이블 css */
+.time-table-container{
+    width: 1500px;
+    height: 800px;
+    margin-left: 20px;
+    overflow-y: auto;
+    display: flex;
+}
+
+.time-table-container table {
+    border-collapse: collapse;
+    width: 100%;
+}
+.time-table-container th {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center;
+    height: 20px;
+    font-size: 12px;
+}
+
+.time-table-container td{
+    padding: 8px;
+    height: 40px;
+    border-top: 1px solid rgb(178, 175, 175);
+}
+
+.time-table-container tr {
+    width: 40px;
+    height: 20px;
+}
+
+
+

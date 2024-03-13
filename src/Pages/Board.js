@@ -2,6 +2,8 @@
 import Navigation from "../Navigation/Navigation";
 
 function Board() {
+
+
   return (
     
       <div className="Board">
