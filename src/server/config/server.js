@@ -13,18 +13,34 @@ app.get('/', (req, res) => {
   res.send('Root'); // 클라이언트에 응답을 보내는 부분을 추가
 });
 
-app.get('/activities', (req, res) => {
-  console.log('/activities');
+app.get('/data', (req, res) => {
+  console.log('/data');
 
-  // MySQL 쿼리 실행
-  db.query('SELECT `WBS Code`, `(*)WBS Name`, `Activity ID`, `Activity Name`, `Start Date`, `Finish Date` FROM activities', (err, result) => {
-    if (err) {
-      console.error('MySQL query error:', err);
-      res.status(500).send('Internal Server Error'); // 에러 응답을 클라이언트에 전송
-    } else {
-      console.log('Query result:', result);
-      res.json(result); // JSON 형태의 결과를 클라이언트에 전송
-    }
+  // 병렬로 두 개의 쿼리 실행
+  Promise.all([
+    new Promise((resolve, reject) => {
+      db.query('SELECT `WBS Code`, `(*)WBS Name`, `Activity ID`, `Activity Name`, `Start Date`, `Finish Date` FROM activities', (err, result) => {
+        if (err) {
+          reject(err);
+        } else {
+          resolve(result);
+        }
+      });
+    }),
+    new Promise((resolve, reject) => {
+      db.query('SELECT * FROM relations', (err, result) => {
+        if (err) {
+          reject(err);
+        } else {
+          resolve(result);
+        }
+      });
+    })
+  ]).then(([activities, relations]) => {
+    res.json({ activities, relations });
+  }).catch(error => {
+    console.error('Error', error);
+    res.status(500).send('Internal Server Error');
   });
 });
 

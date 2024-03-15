@@ -118,7 +118,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 20px;
+    width: 150%;
     bottom: 20px;
     border-bottom: 3px solid black; /* 대각선의 스타일 및 두께 설정 */
     /*대각선*/
@@ -126,63 +126,57 @@
     transform-origin: center; /* 회전 중심점 설정 */}
 
 
-.FS-line1::after {
-
-    content: '';
-    position: absolute;
-    top: 18px;       /*(18기준으로 -40씩 하면될듯)*/
-    left: 18px;      /*(18기준으로 -40씩 하면될듯)*/
-    width: 20px;        /*(20기준으로 +40씩 하면될듯)*/
-    bottom: 0px;
-    border-bottom: 3px solid black; /* 대각선의 스타일 및 두께 설정 */
-    transform: rotate(90deg);
-    transform-origin: center; /* 회전 중심점 설정 */
-    z-index: -1;     /*우선순위 설정해서 막대그래프 뒤로 오도록 설정*/
+.FS-line2 {
+position: relative;
 }
 
-.FS-line2 {
+.FS-line2::before {
+content: '';
+position: absolute;
+top: 18px;
+left: 18px;
+width: 50%;
+bottom: 0px;
+border-bottom: 3px solid black; /* 대각선의 스타일 및 두께 설정 */
+transform: rotate(90deg);
+transform-origin: center; /* 회전 중심점 설정 */}
+
+
+
+.FS-line4 {
     position: relative;
     }
 
-.FS-line2::before {
+.FS-line4::before {
     content: '';
     position: absolute;
     top: 0px;
-    left: 20px;
-    width: 20px;
-    bottom: 20px;
+    /* left: 18px; */
+    right: 80px;
+    width: 50%;
+    bottom: 18px;
     border-bottom: 3px solid black; /* 대각선의 스타일 및 두께 설정 */
     transform: rotate(90deg);
     transform-origin: center; /* 회전 중심점 설정 */}
 
 
-.FS-line2::after{
+
+.FS-line5 {
+    position: relative;
+  }
+
+.FS-line5::before {
     content: '';
     position: absolute;
     top: 0;
     right: 0;
-    width: 20px;
+    width: 50%;
     bottom: 18px;
     border-bottom: 3px solid black; /* 대각선의 스타일 및 두께 설정 */
     /*대각선*/
     transform: rotate(180); 
-    transform-origin: center; /* 회전 중심점 설정 */
-}
+    transform-origin: center; /* 회전 중심점 설정 */}
 
-.FS-line3 {
-    position: relative;
-    }
-
-.FS-line3::before {
-    content: '';
-    position: absolute;
-    left: -60px;        /*3일 3*20 =60     동적으로 받아야함 */
-    width: 120px;       /* 오른쪽 왼쪽 선(20 + 20) + 2일차이(40*2) 선행작업 종료일 4, 후행작업 시작일 3 동적으로 받아야함
-    만약 후행 작업의 시작일이 선행작업의 종료일보다 뒤에 있다면 0으로 둬야함*/
-    bottom: 0px;
-    border-bottom: 3px solid red; /* 대각선의 스타일 및 두께 설정 */
-    
-    transform-origin: bottom; /* 회전 중심점 설정 */}
 
 
 
@@ -203,4 +197,3 @@
     border-left: 10px solid black; /* 화살표의 색상 및 크기 설정 */
     transform: translateY(-50%);
 }
-

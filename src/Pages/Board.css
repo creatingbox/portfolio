@@ -1,0 +1,39 @@
+.table-container {
+    overflow-x: auto;
+    max-width: 100%;
+    padding: 0px;
+    margin: 0px;
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    
+    
+  }
+  .table tr{
+    padding: 0px;
+    margin: 0px;
+    
+  }
+  
+  .diagonal-line {
+    position: relative;
+  }
+  
+  .diagonal-line::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    bottom: 10px;
+    border-bottom: 3px solid black; /* 대각선의 스타일 및 두께 설정 */
+    /*대각선*/
+    transform: rotate(90); 
+    transform-origin: center; /* 회전 중심점 설정 */}
+  
+  .table-container th, .table-container td {
+    border: 1px solid red;}
