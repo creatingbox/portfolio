@@ -3,6 +3,7 @@ import Navigation from "../../Navigation/Navigation";
 import { useEffect, useState } from "react";
 import './project.css';
 
+
 function Project() {
 
   const [data, setData] = useState({activities:[], relations:[]});
@@ -94,7 +95,6 @@ function Project() {
 
   /*버튼을 클릭했을 때 수행하는 함수*/
   const selectAll=()=>{
-    alert("select all!");
     axios.get('http://localhost:4000/data')
     .then(response =>{
       const {activities, relations} = response.data;
@@ -106,7 +106,6 @@ function Project() {
       }));
       setData({activities: updatedActivities, relations});
       setShowTable(true);
-      drawFSRelation(); // FS관계 그리기
     })
     .catch(error => {
       console.error('Error', error);
@@ -127,7 +126,7 @@ function Project() {
     <div className="Project">
         <Navigation></Navigation>
         <h2>Project 진행한 것에 대한 기록입니다.</h2>
-        <button onClick={selectAll}>모두 조회</button>
+        <button onClick={selectAll}>Run Algorithm</button>
         {showTable && (
         <div className="tables-container">
           <div className="project-table-container">
@@ -191,13 +190,6 @@ function Project() {
                   ))}</tr>
               </thead>
               <tbody>
-              {/* {FSIndexList.map((row,rowIndex) =>(
-                    <tr key={rowIndex}>
-                      {row.map((cell, cellIndex) =>(
-                        <td key={cellIndex} className={FSIndexList.some(item => item[0] === rowIndex && item[1] === cellIndex)  ? 'diagonal-line' : ''}>{cell}</td>
-                      ))}
-                    </tr>
-                  ))} */}
                 {data.activities.map((item, rowIndex) => (
                   <tr key={rowIndex}>
                     {dateArray.map((date, dateIndex) => {
@@ -223,35 +215,17 @@ function Project() {
                         barStyle.borderTopRightRadius = '5px'; // 종료부분
                         barStyle.borderBottomRightRadius = '5px';
                       }
-
-                      //FS 연결선 추가
-                      const isFSLine1 = FSIndexList.some(
-                        item => item[0] === rowIndex && item[1] ===dateIndex-1
-                      );
-
-                      const isFSLine2 = FSIndexList.some(
-                        item => item[2] === rowIndex && item[3] ===dateIndex+1
-                      );
                       
 
-                      const isFSLine3 = FSIndexList.some(
-                        item => item[0] === rowIndex && item[1] ===dateIndex
-                      );
-
-                      const isFSarrow = FSIndexList.some(
-                        item => item[2] === rowIndex && item[3] ===dateIndex
-                      );
-
-                      
 
                       
                       
                       //결과값 반환
                       return(
-                        <td key={dateIndex} className={`${isFSLine1 ? 'FS-line1' : ''} ${isFSLine3 ? 'FS-line3' : ''}
-                        ${isFSLine2 ? 'FS-line2' : ''} ${isFSarrow ? 'arrow-right' : ''}  `}>
+                        <td>
                         
-                          <div className="gantt-bar" style={barStyle}></div>
+                          <div className="gantt-bar" style={barStyle}>
+                          </div>
                           
                         </td>
                         

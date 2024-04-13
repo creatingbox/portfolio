@@ -16,10 +16,11 @@ function Navigation(){
             </div>
             <ul className='navbar__menu'>
                 <li><a href='/home'>Home</a></li>
-                <li><a href='/Personal_Statement'>Personal_Statement</a></li>
+                <li><a href='/Personal_Statement'>Personal Statement</a></li>
                 <li><a href='/Project'>Project</a></li>
                 <li><a href='/Interesting'>Interesting</a></li>
                 <li><a href='/board'>Board</a></li>
+                <li><a href='/test'>Test</a></li>
             </ul>
 
             <ul className='navbar__icons'>

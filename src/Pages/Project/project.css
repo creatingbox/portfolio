@@ -92,11 +92,19 @@
     height: 20px;
     font-size: 12px;
 }
+.Interesting tbody tr:nth-child(even) {
+  background-color: #f2f2f2; /* 짝수 행 배경색 */
+}
+
+.Interesting tbody tr:nth-child(odd) {
+  background-color: rgb(95, 88, 88); /* 홀수 행 배경색 */
+}
 
 .time-table-container td{
     padding: 0px;
     height: 40px;
     border-top: 1px solid rgb(178, 175, 175);
+    border: none;
 }
 
 .time-table-container tr {
@@ -104,11 +112,16 @@
     height: 20px;
 }
 
-/* .fs-relationship{
-    position:absolute;
-    position: sticky;
-} */
+.time-table-container tbody tr:nth-child(even) {
+    background-color: #d4d3d3; /* 짝수 행 배경색 */
+  }
+  
+  .time-table-container tbody tr:nth-child(odd) {
+    background-color: rgb(180, 177, 177); /* 홀수 행 배경색 */
+  }
+  
 
+/* 이 아래 항목들은 선후행관계를 표시하기 위한 선을 나타내기 위함(아직 적용 안됨)*/
 .FS-line1 {
     position: relative;
   }
@@ -118,8 +131,8 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 20px;
-    bottom: 20px;
+    width: 50%;
+    bottom: 50%;
     border-bottom: 3px solid black; /* 대각선의 스타일 및 두께 설정 */
     /*대각선*/
     transform: rotate(180); 
@@ -127,19 +140,34 @@
 
 
 .FS-line1::after {
+    content: '';
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 3px; /* 선의 두께를 변경 */
+    height: 23px; /* 선의 높이를 변경 */
+    background-color: black; /* 선의 색상 */
+    z-index: -1;  
+}
+    
+
+/* .FS-line1::after {
 
     content: '';
     position: absolute;
-    top: 18px;       /*(18기준으로 -40씩 하면될듯)*/
-    left: 18px;      /*(18기준으로 -40씩 하면될듯)*/
-    width: 20px;        /*(20기준으로 +40씩 하면될듯)*/
-    bottom: 0px;
-    border-bottom: 3px solid black; /* 대각선의 스타일 및 두께 설정 */
+    bottom: 0;
+    left: 50%;
+    width: 20px;        
+    border-bottom: 3px solid black; 
     transform: rotate(90deg);
-    transform-origin: center; /* 회전 중심점 설정 */
-    z-index: -1;     /*우선순위 설정해서 막대그래프 뒤로 오도록 설정*/
-}
-
+    transform-origin: center;   
+                  
+} */
+/*(20기준으로 +40씩 하면될듯)*/
+/* 대각선의 스타일 및 두께 설정 */
+/*회전 중심점 설정 */
+/*우선순위 설정해서 막대그래프 뒤로 오도록 설정 */
 .FS-line2 {
     position: relative;
     }
@@ -148,9 +176,9 @@
     content: '';
     position: absolute;
     top: 0px;
-    left: 20px;
+    left: 48%;
     width: 20px;
-    bottom: 20px;
+    bottom: 50%;
     border-bottom: 3px solid black; /* 대각선의 스타일 및 두께 설정 */
     transform: rotate(90deg);
     transform-origin: center; /* 회전 중심점 설정 */}
@@ -161,8 +189,8 @@
     position: absolute;
     top: 0;
     right: 0;
-    width: 20px;
-    bottom: 18px;
+    width: 22px;
+    bottom: 50%;
     border-bottom: 3px solid black; /* 대각선의 스타일 및 두께 설정 */
     /*대각선*/
     transform: rotate(180); 

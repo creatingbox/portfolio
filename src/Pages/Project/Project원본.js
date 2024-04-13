@@ -3,6 +3,7 @@ import Navigation from "../../Navigation/Navigation";
 import { useEffect, useState } from "react";
 import './project.css';
 
+
 function Project() {
 
   const [data, setData] = useState({activities:[], relations:[]});
@@ -86,7 +87,6 @@ function Project() {
           fsline.push([predecessorIndex, predecessorFinishDateIndex+1, successorIndex,successorFinishDateIndex-1]);
         }
       }
-      console.log(FSIndex);
     });
     return [FSIndex, fsline];
   };
@@ -192,13 +192,6 @@ function Project() {
                   ))}</tr>
               </thead>
               <tbody>
-              {/* {FSIndexList.map((row,rowIndex) =>(
-                    <tr key={rowIndex}>
-                      {row.map((cell, cellIndex) =>(
-                        <td key={cellIndex} className={FSIndexList.some(item => item[0] === rowIndex && item[1] === cellIndex)  ? 'diagonal-line' : ''}>{cell}</td>
-                      ))}
-                    </tr>
-                  ))} */}
                 {data.activities.map((item, rowIndex) => (
                   <tr key={rowIndex}>
                     {dateArray.map((date, dateIndex) => {
@@ -224,41 +217,44 @@ function Project() {
                         barStyle.borderTopRightRadius = '5px'; // 종료부분
                         barStyle.borderBottomRightRadius = '5px';
                       }
+                      
 
                       //FS 연결선 추가
                       const isFSLine1 = FSIndexList.some(
                         item => item[0] === rowIndex && item[1] ===dateIndex-1
                       );
-                      
-                      const isFSLine2 = FSIndexList.some(
-                        item => item[0] === rowIndex && item[1] ===dateIndex-2
-                      );
-                      
-                      const isFSLine4 = FSIndexList.some(
-                        item => item[2] === rowIndex && item[3] ===dateIndex-1
-                      );
 
-                      const isFSLine5 = FSIndexList.some(
+                      const isFSLine2 = FSIndexList.some(
                         item => item[2] === rowIndex && item[3] ===dateIndex+1
+                      );
+                      
+
+                      const isFSLine3 = FSIndexList.some(
+                        item => item[0] === rowIndex && item[1] ===dateIndex
                       );
 
                       const isFSarrow = FSIndexList.some(
                         item => item[2] === rowIndex && item[3] ===dateIndex
                       );
-
                       
+                      // isFSLine1.fs-line1.width = '20px';
 
                       
                       
                       //결과값 반환
                       return(
-                        // <td key={dateIndex} className={`${isFSLine1 || isFSLine2 ? 'FS-line1' : ''} ${isFSLine3 || isFSLine4 ? 'FS-line2' : ''}`}>
-                        <td key={dateIndex} className={`${isFSLine1 ? 'FS-line1' : ''} ${isFSLine2 ? 'FS-line2' : ''} 
-                        ${isFSLine4 ? 'FS-line4' : ''} ${isFSLine5 ? 'FS-line5' : ''} ${isFSarrow ? 'arrow-right' : ''} `}>
-                        {/* <td key={dateIndex} className={`${isFSLine1 ? 'FS-line1' : ''}  ${isFSLine3 ? 'FS-line2' : ''}`}> */}
-
+                        <td key={dateIndex} className={`${isFSLine1 ? 'FS-line1' : ''} ${isFSLine3 ? 'FS-line3' : ''}
+                        ${isFSLine2 ? 'FS-line2' : ''} ${isFSarrow ? 'arrow-right' : ''}  `}>
+                          <style>
+                            {`
+                            .FS-line1::after{
+                              height : 63px;
+                            }
+                            `}
+                            </style>
                         
-                          <div className="gantt-bar" style={barStyle}></div>
+                          <div className="gantt-bar" style={barStyle}>
+                          </div>
                           
                         </td>
                         

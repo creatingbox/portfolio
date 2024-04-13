@@ -1,0 +1,48 @@
+.personal_section1{
+    margin: 0;
+    padding: 0;
+    display: flex;
+
+    height: 700px;
+    width: 100%;
+    background-color: rgb(58, 57, 57);
+    color: white;
+    padding: 75px;
+    padding-left: 100px;
+}
+.personal_div1{
+    height: 350px;
+    width: 350px;
+}
+
+.personal_div1 img {
+    width: 100%;
+    height: auto;
+   
+}
+
+.personal_div2 h3{
+    font-size: 20px;
+}
+.education{
+    list-style-type: none;
+}
+.personal_div2{
+    height: 350px;
+    width: 70%;
+    margin-left: 250px;
+    font-size: 30px;
+}
+
+.personal_section2{
+    margin: 0;
+    padding: 0;
+    display: flex;
+
+    height: 700px;
+    width: 100%;
+    background-color: rgb(98, 95, 95);
+    color: white;
+    padding: 75px;
+    padding-left: 100px;
+}

@@ -1,0 +1,50 @@
+.Interesting{
+  position: relative;
+  background-color: rgb(67, 66, 66);
+  color: white;
+}
+.Interesting h2 {
+  text-align: center;
+}
+
+.Interesting table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px auto; /* 가운데 정렬을 위해 추가 */
+}
+
+.Interesting th, .Interesting td {
+  border: 1px solid #dddddd;
+  padding: 12px;
+  text-align: center;
+}
+
+.Interesting th {
+  background-color: #5c5a5a; /* 헤더 배경색 */
+  font-weight: bold; /* 헤더 글꼴 굵게 */
+}
+
+.Interesting tbody tr:nth-child(even) {
+  background-color: #f2f2f2; /* 짝수 행 배경색 */
+}
+
+.Interesting tbody tr:nth-child(odd) {
+  background-color: rgb(95, 88, 88); /* 홀수 행 배경색 */
+}
+
+
+.Interesting tbody tr:hover {
+  background-color: #dddddd; /* 마우스 오버시 배경색 */
+}
+.Interesting .randarchart_container{
+  width: 800px;
+  height: 800px;
+  background-color: rgb(123, 122, 122);
+}
+
+.information-text {
+  position: absolute;
+  top: 50%;
+  right: 20px; /* 우측 여백 조정 */
+  transform: translateY(-50%);
+}

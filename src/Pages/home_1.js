@@ -50,8 +50,7 @@ function Home() {
           <h1
             id="madimiFont"
             className="madimi_font"
-            style={{ maxWidth: `${currentSentenceWidth}px`}}
-          >
+            style={{ maxWidth: `${currentSentenceWidth}px`}}>
             {sentences[currentSentenceIndex]}
           </h1>
         </div>
